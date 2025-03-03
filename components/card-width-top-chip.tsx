@@ -54,7 +54,7 @@ const CardWithTopChip: React.FC<{
         </Row>
         <Text style={descriptionStyle}>{description}</Text>
       </Container>
-      <Img src={image} alt="" width="100%" height={250} className="rounded-b-[8px]" />
+      <Img src={image} alt="" width="100%" height={250} className="rounded-b-[8px] object-cover" />
     </Container>
   );
 };

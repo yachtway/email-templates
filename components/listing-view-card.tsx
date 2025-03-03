@@ -38,7 +38,7 @@ const ListingViewCard: React.FC<{
           <Text style={textStyle}>{title}</Text>
           <Row width="auto" align="left">
             <Column>
-              <Img src={`${dealerStatsBaseUrl}/eye.png`} alt="eye" className="mb-[2px]" width={25} height={25} />
+              <Img src={`${dealerStatsBaseUrl}/eye.png`} alt="eye" className="mb-[2px] object-cover" width={25} height={25} />
             </Column>
             <Column>
               <Text style={viewsStyle} className="pl-[5px] text-[#5111ac]">

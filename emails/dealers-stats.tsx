@@ -42,6 +42,7 @@ const blockBg = `${baseUrl}/bg-email.png`;
 
 const heroStyle = {
   background: `url(${blockBg})`,
+  backgroundColor: 'white',
   backgroundSize: "cover",
 };
 
@@ -104,9 +105,9 @@ export const VercelInviteUserEmail = () => {
 
   return (
     <Html>
-      <Head />
       <Preview>{previewText}</Preview>
       <Tailwind>
+        <Head />
         <Body style={emailStyle} className="bg-[#F8F8FA] my-auto mx-auto px-2">
           <Container className="max-w-[600px] w-full">
             <Container className="bg-[#F8F8FA]">
@@ -150,7 +151,7 @@ export const VercelInviteUserEmail = () => {
 
             <Container className="bg-white px-6 pb-9">
               <Section>
-                <Row cellSpacing={8}>
+                <Row cellSpacing={8} className="max-[600px]:hidden">
                   <Column width="50%">
                     <PurpleStatsCard
                       title="Number of Phone Calls"
@@ -159,6 +160,23 @@ export const VercelInviteUserEmail = () => {
                     />
                   </Column>
                   <Column width="50%">
+                    <PurpleStatsCard
+                      title="Number of Messages"
+                      value={<Variable>messages</Variable>}
+                      image={`${baseUrl}/letter.png`}
+                    />
+                  </Column>
+                </Row>
+
+                <Row className="hidden max-[600px]:table" data-testid="mobile-listings" width="100%" align="center">
+                  <Column align="center">
+                    <div className="mb-4">
+                      <PurpleStatsCard
+                        title="Number of Phone Calls"
+                        value={<Variable>phone_calls</Variable>}
+                        image={`${baseUrl}/phone.png`}
+                      />
+                    </div>
                     <PurpleStatsCard
                       title="Number of Messages"
                       value={<Variable>messages</Variable>}
@@ -175,7 +193,7 @@ export const VercelInviteUserEmail = () => {
                   <Heading style={heading2Style}>Most Viewed Listings</Heading>
                 </Column>
               </Row>
-              <Row cellSpacing={8}>
+              <Row cellSpacing={8} className="max-[600px]:hidden">
                 <Column align="center" width="50%">
                   <CardWithTopChip
                     title="Most Popular Listing"
@@ -193,6 +211,25 @@ export const VercelInviteUserEmail = () => {
                     image={"{{runner_up_listing_image}}"}
                   />
                   <ViewsChip views={<Variable>2_views</Variable>} />
+                </Column>
+              </Row>
+
+              <Row className="hidden max-[600px]:table" data-testid="mobile-listings" width="auto" align="center">
+                <Column align="center">
+                  <div className="mb-4">
+                    <CardWithTopChip
+                      title="Most Popular Listing"
+                      type="gold"
+                      description={<Variable>most_popular_listing_description</Variable>}
+                      image={"{{most_popular_listing_image}}"}
+                    />
+                  </div>
+                  <CardWithTopChip
+                    title="Runner Up Listing"
+                    type="silver"
+                    description={<Variable>runner_up_listing_description</Variable>}
+                    image={"{{runner_up_listing_image}}"}
+                  />
                 </Column>
               </Row>
             </Container>
