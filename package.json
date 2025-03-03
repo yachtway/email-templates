@@ -3,9 +3,9 @@
   "version": "0.1.9",
   "private": true,
   "scripts": {
-    "build": "cp .env ./node_modules/react-email/dist/preview && email build",
+    "build": "BUCKET_URL=https://assets.yachtway.com email build",
     "dev": "cp .env ./node_modules/react-email/dist/preview && email dev",
-    "export": "cp .env ./node_modules/react-email/dist/preview && email export"
+    "export": "BUCKET_URL=https://assets.yachtway.com email export --pretty"
   },
   "dependencies": {
     "@react-email/components": "0.0.33",
