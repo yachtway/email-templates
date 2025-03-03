@@ -181,7 +181,7 @@ export const VercelInviteUserEmail = () => {
                     title="Most Popular Listing"
                     type="gold"
                     description={<Variable>most_popular_listing_description</Variable>}
-                    image={"https://picsum.photos/300/300"}
+                    image={"{{most_popular_listing_image}}"}
                   />
                   <ViewsChip views={<Variable>1_views</Variable>} />
                 </Column>
@@ -190,7 +190,7 @@ export const VercelInviteUserEmail = () => {
                     title="Runner Up Listing"
                     type="silver"
                     description={<Variable>runner_up_listing_description</Variable>}
-                    image={"https://picsum.photos/300/300"}
+                    image={"{{runner_up_listing_image}}"}
                   />
                   <ViewsChip views={<Variable>2_views</Variable>} />
                 </Column>
@@ -205,12 +205,16 @@ export const VercelInviteUserEmail = () => {
               <ListingViewCard
                 title={<Variable>listing_title</Variable>}
                 views={<Variable>listing_views</Variable>}
-                image={"https://picsum.photos/300/300"}
+                image={"{{listing_image}}"}
               />
 
-              <Button href="{{analytics_href}}" className="mb-10 w-full text-center pt-3 pb-2 bg-black" style={buttonStyle}>
+              <Button
+                href="{{analytics_href}}"
+                className="mb-10 w-full text-center pt-3 pb-2 bg-black"
+                style={buttonStyle}
+              >
                 <Row align="center">
-                  <Column align='center'>View All Analytics</Column>
+                  <Column align="center">View All Analytics</Column>
                 </Row>
               </Button>
             </Section>
